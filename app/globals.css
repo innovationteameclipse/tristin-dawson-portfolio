@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode variables */
+    --bg-primary: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --card-bg: #f3f4f6;
+    --border-color: #e5e7eb;
+  }
+
+  .dark {
+    /* Dark mode variables */
+    --bg-primary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --card-bg: #1a1a1a;
+    --border-color: #374151;
+  }
+
+  html {
+    font-size: 14px;
+  }
+  
+  body {
+    font-family: var(--font-public-sans), system-ui, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+/* Hide scrollbar for scrolling gallery */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
