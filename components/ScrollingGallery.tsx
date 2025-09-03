@@ -10,37 +10,37 @@ export default function ScrollingGallery() {
   const galleryItems = [
     {
       title: "Website Redesign",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&h=500&fit=crop&crop=center",
       category: "Web Design",
       rotation: "rotate-1"
     },
     {
       title: "Mobile App UI",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=500&fit=crop&crop=center",
       category: "UI Design",
       rotation: "-rotate-1"
     },
     {
       title: "Brand Identity",
-      image: "https://images.unsplash.com/photo-1561070791-2526d41294b5?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1561070791-2526d41294b5?w=500&h=500&fit=crop&crop=center",
       category: "Branding",
       rotation: "rotate-2"
     },
     {
       title: "Dashboard Design",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop&crop=center",
       category: "UX Design",
       rotation: "-rotate-2"
     },
     {
       title: "Print Materials",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&h=500&fit=crop&crop=center",
       category: "Print Design",
       rotation: "rotate-1"
     },
     {
       title: "Social Media",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&h=500&fit=crop",
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&h=500&fit=crop&crop=center",
       category: "Digital Marketing",
       rotation: "-rotate-1"
     }
