@@ -10,19 +10,52 @@ export default function Hero({ gradientClass }: HeroProps) {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/images/4562190_Wave_Abstract_3840x2160.mp4" type="video/mp4" />
-      </video>
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+        <div 
+          className="absolute inset-0 opacity-60"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)
+            `,
+            animation: 'gradientShift 15s ease-in-out infinite'
+          }}
+        ></div>
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            background: `
+              radial-gradient(circle at 60% 30%, rgba(255, 200, 100, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 30% 70%, rgba(100, 200, 255, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(200, 100, 255, 0.2) 0%, transparent 50%)
+            `,
+            animation: 'gradientShift 20s ease-in-out infinite reverse'
+          }}
+        ></div>
+      </div>
+      
+      {/* Custom CSS for gradient animation */}
+      <style jsx>{`
+        @keyframes gradientShift {
+          0%, 100% {
+            transform: translateX(0) translateY(0) scale(1);
+          }
+          25% {
+            transform: translateX(-5%) translateY(-3%) scale(1.05);
+          }
+          50% {
+            transform: translateX(5%) translateY(3%) scale(0.95);
+          }
+          75% {
+            transform: translateX(-3%) translateY(5%) scale(1.02);
+          }
+        }
+      `}</style>
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
