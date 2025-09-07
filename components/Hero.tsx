@@ -9,7 +9,23 @@ interface HeroProps {
 export default function Hero({ gradientClass }: HeroProps) {
 
   return (
-    <section className="max-w-5xl mx-auto px-8 py-20 text-center">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/images/4562190_Wave_Abstract_3840x2160.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
       {/* Profile Picture */}
       <div className="mb-8">
         <div className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${gradientClass} p-0 overflow-hidden`}>
@@ -69,6 +85,7 @@ export default function Hero({ gradientClass }: HeroProps) {
         <a href="#" className="text-neutral-300 hover:text-white transition-colors">
           <Instagram size={24} />
         </a>
+      </div>
       </div>
     </section>
   )

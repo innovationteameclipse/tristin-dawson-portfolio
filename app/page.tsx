@@ -28,8 +28,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
       <Navigation />
-      <div className="pt-32">
-        <Hero gradientClass={gradientClass} />
+      <Hero gradientClass={gradientClass} />
+      <div>
         <ScrollingGallery />
         <div className="max-w-7xl mx-auto px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
