@@ -29,7 +29,7 @@ export default function Home() {
     <main className="min-h-screen bg-neutral-950 text-white">
       <Navigation />
       <Hero gradientClass={gradientClass} />
-      <div>
+      <div className="pt-20">
         <ScrollingGallery />
         <div className="max-w-7xl mx-auto px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">

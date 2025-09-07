@@ -83,7 +83,7 @@ const FAQ = () => {
   }
 
   return (
-    <section className="mb-16">
+    <section id="faq" className="mb-16">
       <div className="max-w-[1200px] mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
         <p className="text-xl text-neutral-300 mb-12">

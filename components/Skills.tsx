@@ -20,8 +20,8 @@ const Skills = ({ gradientClass }: SkillsProps) => {
     { name: "Figma", percentage: 90, category: "Design Tools" },
     { name: "Adobe Photoshop", percentage: 88, category: "Design Tools" },
     { name: "Adobe Illustrator", percentage: 85, category: "Design Tools" },
-    { name: "Adobe InDesign", percentage: 82, category: "Design Tools" },
-    { name: "Adobe XD", percentage: 80, category: "Design Tools" },
+    { name: "Adobe After Effects", percentage: 82, category: "Design Tools" },
+    { name: "Adobe Premiere Pro", percentage: 80, category: "Design Tools" },
     { name: "UI/UX Design", percentage: 88, category: "Design Skills" },
     { name: "Website Design", percentage: 92, category: "Design Skills" },
     { name: "Brand Identity", percentage: 87, category: "Design Skills" },
@@ -84,7 +84,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
   }, [])
 
   return (
-    <section className="py-20">
+    <section id="skills" className="py-20">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
@@ -130,8 +130,8 @@ const Skills = ({ gradientClass }: SkillsProps) => {
           <h3 className="text-2xl font-semibold text-white mb-8">Additional Tools & Technologies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Leadtrekker", "Everlytic", "WordPress", "Shopify", "Mailchimp", 
-              "Canva", "Sketch", "InVision", "Zeplin", "Miro", "Notion"
+              "ComfyUI", "Everlytic", "Mailchimp", "Elementor", "WordPress", 
+              "Cursor", "HTML", "CSS", "Canva", "Leadtrekker"
             ].map((tool) => (
               <span 
                 key={tool}

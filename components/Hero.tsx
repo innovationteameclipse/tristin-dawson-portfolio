@@ -1,6 +1,7 @@
 'use client'
 
 import { Instagram, Linkedin, Dribbble, Palette } from 'lucide-react'
+import Image from 'next/image'
 
 interface HeroProps {
   gradientClass: string
@@ -9,63 +10,48 @@ interface HeroProps {
 export default function Hero({ gradientClass }: HeroProps) {
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-        <div 
-          className="absolute inset-0 opacity-60"
-          style={{
-            background: `
-              radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)
-            `,
-            animation: 'gradientShift 15s ease-in-out infinite'
-          }}
-        ></div>
-        <div 
-          className="absolute inset-0 opacity-40"
-          style={{
-            background: `
-              radial-gradient(circle at 60% 30%, rgba(255, 200, 100, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 30% 70%, rgba(100, 200, 255, 0.2) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(200, 100, 255, 0.2) 0%, transparent 50%)
-            `,
-            animation: 'gradientShift 20s ease-in-out infinite reverse'
-          }}
-        ></div>
-      </div>
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-label="Abstract wave animation background"
+      >
+        <source src="/images/wave-background-compressed.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
-      {/* Custom CSS for gradient animation */}
-      <style jsx>{`
-        @keyframes gradientShift {
-          0%, 100% {
-            transform: translateX(0) translateY(0) scale(1);
-          }
-          25% {
-            transform: translateX(-5%) translateY(-3%) scale(1.05);
-          }
-          50% {
-            transform: translateX(5%) translateY(3%) scale(0.95);
-          }
-          75% {
-            transform: translateX(-3%) translateY(5%) scale(1.02);
-          }
-        }
-      `}</style>
       
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
+      
+      {/* Dot Grid Overlay */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '24px 24px',
+          backgroundPosition: '0 0, 12px 12px'
+        }}
+      ></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
       {/* Profile Picture */}
       <div className="mb-8">
         <div className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${gradientClass} p-0 overflow-hidden`}>
-          <img 
+          <Image 
             src="/images/tristin.png" 
             alt="Tristin Dawson" 
+            width={128}
+            height={128}
             className="w-full h-full object-cover rounded-full"
+            priority
           />
         </div>
       </div>
@@ -105,7 +91,7 @@ export default function Hero({ gradientClass }: HeroProps) {
       </div>
 
       {/* Social Links */}
-      <div className="flex items-center justify-center space-x-6">
+      <div className="flex items-center justify-center space-x-6 mt-12">
         <a href="https://www.linkedin.com/in/tristin-dawson/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
           <Linkedin size={24} />
         </a>

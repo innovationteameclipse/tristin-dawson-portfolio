@@ -2,6 +2,7 @@
 
 import { Quote } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 interface TestimonialProps {
   gradientClass: string
@@ -205,7 +206,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
   }
 
   return (
-    <section className="mb-16 p-0">
+    <section id="testimonials" className="mb-16 p-0">
       <div className="max-w-[1200px] mx-auto text-center">
         {/* Section Header */}
         <div className="mb-12">
@@ -269,9 +270,11 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
                   {/* Author Section */}
                   <div className="flex items-center justify-center space-x-6">
                     <div className={`w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br ${gradientClass} p-0`}>
-                      <img
+                      <Image
                         src={testimonial.image}
                         alt={testimonial.author}
+                        width={64}
+                        height={64}
                         className="w-full h-full object-cover rounded-full"
                         onError={(e) => {
                           // Fallback to initials if image fails to load
