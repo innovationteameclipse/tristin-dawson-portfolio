@@ -55,15 +55,19 @@ export default function ScrollingGallery() {
 
   // Carousel navigation functions
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? galleryItems.length - 1 : prevIndex - 1
-    )
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? galleryItems.length - 1 : prevIndex - 1
+      console.log('Previous: ', prevIndex, '->', newIndex)
+      return newIndex
+    })
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === galleryItems.length - 1 ? 0 : prevIndex + 1
-    )
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === galleryItems.length - 1 ? 0 : prevIndex + 1
+      console.log('Next: ', prevIndex, '->', newIndex)
+      return newIndex
+    })
   }
 
   // Modal functions
@@ -102,6 +106,7 @@ export default function ScrollingGallery() {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-2 text-white">Recent Projects</h2>
           <p className="text-xl text-neutral-300">A showcase of my latest design work</p>
+          <p className="text-sm text-neutral-400 mt-2">Current: {currentIndex + 1} of {galleryItems.length}</p>
         </div>
 
         <div className="relative">
@@ -133,8 +138,10 @@ export default function ScrollingGallery() {
               {galleryItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    index === currentIndex ? 'opacity-100' : 'opacity-0'
+                  className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                    index === currentIndex 
+                      ? 'opacity-100 z-10' 
+                      : 'opacity-0 z-0 pointer-events-none'
                   }`}
                 >
                   <button 
