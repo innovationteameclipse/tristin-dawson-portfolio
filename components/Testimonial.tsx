@@ -56,7 +56,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
       image: "/images/lara.webp"
     },
     {
-      quote: "Tristin went above and beyond to assist me with Haval PTA. He quickly found the client's drive path and provided access to all the images I needed.",
+      quote: "Tristin went above and beyond to assist me with our client. He quickly found the client's drive path and provided access to all the images I needed.",
       author: "Dorette",
       role: "Team Member",
       image: "/images/dorette.webp"
@@ -74,7 +74,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
       image: "/images/wikus.webp"
     },
     {
-      quote: "Tristin was tasked with creating an HTML email signature for Creodata. He persevered for days, figured it out himself, and worked after hours to meet the deadline.",
+      quote: "Tristin was tasked with creating an HTML email signature for our client. He persevered for days, figured it out himself, and worked after hours to meet the deadline.",
       author: "Megan",
       role: "Former Team Member",
       image: "/images/megan.webp"
