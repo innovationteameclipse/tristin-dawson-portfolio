@@ -252,13 +252,11 @@ export default function ScrollingGallery() {
   }
 
   const goToPrevious = () => {
-    console.log('Previous button clicked!')
     if (scrollContainerRef.current) {
       const newIndex = currentIndex > 0 ? currentIndex - 1 : galleryItems.length - 1
       setCurrentIndex(newIndex)
       const container = scrollContainerRef.current
       const itemWidth = getItemWidth()
-      console.log('Previous - Current Index:', currentIndex, 'New Index:', newIndex, 'Item Width:', itemWidth)
       container.scrollTo({
         left: newIndex * itemWidth,
         behavior: 'smooth'
@@ -267,13 +265,11 @@ export default function ScrollingGallery() {
   }
 
   const goToNext = () => {
-    console.log('Next button clicked!')
     if (scrollContainerRef.current) {
       const newIndex = currentIndex < galleryItems.length - 1 ? currentIndex + 1 : 0
       setCurrentIndex(newIndex)
       const container = scrollContainerRef.current
       const itemWidth = getItemWidth()
-      console.log('Next - Current Index:', currentIndex, 'New Index:', newIndex, 'Item Width:', itemWidth)
       container.scrollTo({
         left: newIndex * itemWidth,
         behavior: 'smooth'
