@@ -240,12 +240,24 @@ export default function ScrollingGallery() {
     setSelectedItem(null)
   }
 
+  const getItemWidth = () => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current
+      const firstItem = container.querySelector('.snap-center')
+      if (firstItem) {
+        return firstItem.getBoundingClientRect().width + 32 // width + gap
+      }
+    }
+    return 352 // fallback
+  }
+
   const goToPrevious = () => {
     if (scrollContainerRef.current) {
       const newIndex = currentIndex > 0 ? currentIndex - 1 : galleryItems.length - 1
       setCurrentIndex(newIndex)
       const container = scrollContainerRef.current
-      const itemWidth = container.clientWidth
+      const itemWidth = getItemWidth()
+      console.log('Previous - Current Index:', currentIndex, 'New Index:', newIndex, 'Item Width:', itemWidth)
       container.scrollTo({
         left: newIndex * itemWidth,
         behavior: 'smooth'
@@ -258,7 +270,8 @@ export default function ScrollingGallery() {
       const newIndex = currentIndex < galleryItems.length - 1 ? currentIndex + 1 : 0
       setCurrentIndex(newIndex)
       const container = scrollContainerRef.current
-      const itemWidth = container.clientWidth
+      const itemWidth = getItemWidth()
+      console.log('Next - Current Index:', currentIndex, 'New Index:', newIndex, 'Item Width:', itemWidth)
       container.scrollTo({
         left: newIndex * itemWidth,
         behavior: 'smooth'
@@ -291,9 +304,9 @@ export default function ScrollingGallery() {
     if (!container) return
 
     const handleScroll = () => {
-      const containerWidth = container.clientWidth
       const scrollLeft = container.scrollLeft
-      const newIndex = Math.round(scrollLeft / containerWidth)
+      const itemWidth = getItemWidth()
+      const newIndex = Math.round(scrollLeft / itemWidth)
       setCurrentIndex(newIndex)
     }
 
