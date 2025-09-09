@@ -15,6 +15,7 @@ export default function ScrollingGallery() {
   const [lastTime, setLastTime] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedItem, setSelectedItem] = useState<any>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const galleryItems = [
     {
@@ -239,6 +240,32 @@ export default function ScrollingGallery() {
     setSelectedItem(null)
   }
 
+  const goToPrevious = () => {
+    if (scrollContainerRef.current) {
+      const newIndex = currentIndex > 0 ? currentIndex - 1 : galleryItems.length - 1
+      setCurrentIndex(newIndex)
+      const container = scrollContainerRef.current
+      const itemWidth = container.clientWidth
+      container.scrollTo({
+        left: newIndex * itemWidth,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const goToNext = () => {
+    if (scrollContainerRef.current) {
+      const newIndex = currentIndex < galleryItems.length - 1 ? currentIndex + 1 : 0
+      setCurrentIndex(newIndex)
+      const container = scrollContainerRef.current
+      const itemWidth = container.clientWidth
+      container.scrollTo({
+        left: newIndex * itemWidth,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -258,6 +285,22 @@ export default function ScrollingGallery() {
     }
   }, [isModalOpen])
 
+  // Update current index on scroll
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const containerWidth = container.clientWidth
+      const scrollLeft = container.scrollLeft
+      const newIndex = Math.round(scrollLeft / containerWidth)
+      setCurrentIndex(newIndex)
+    }
+
+    container.addEventListener('scroll', handleScroll)
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <section id="projects" className="mb-16">
       <div className="max-w-7xl mx-auto px-8">
@@ -269,17 +312,7 @@ export default function ScrollingGallery() {
         <div className="relative overflow-hidden">
           {/* Mobile Navigation Arrows */}
           <button
-            onClick={() => {
-              if (scrollContainerRef.current) {
-                const currentScroll = scrollContainerRef.current.scrollLeft
-                const itemWidth = 320 + 32 // width + gap
-                const newScroll = Math.max(0, currentScroll - itemWidth)
-                scrollContainerRef.current.scrollTo({
-                  left: newScroll,
-                  behavior: 'smooth'
-                })
-              }
-            }}
+            onClick={goToPrevious}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
             aria-label="Previous project"
           >
@@ -288,17 +321,7 @@ export default function ScrollingGallery() {
             </svg>
           </button>
           <button
-            onClick={() => {
-              if (scrollContainerRef.current) {
-                const currentScroll = scrollContainerRef.current.scrollLeft
-                const itemWidth = 320 + 32 // width + gap
-                const newScroll = currentScroll + itemWidth
-                scrollContainerRef.current.scrollTo({
-                  left: newScroll,
-                  behavior: 'smooth'
-                })
-              }
-            }}
+            onClick={goToNext}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
             aria-label="Next project"
           >
