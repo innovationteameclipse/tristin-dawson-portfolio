@@ -12,7 +12,7 @@ export default function ScrollingGallery() {
     {
       title: "PG Bison",
       image: "/images/pg_bison.webp",
-      category: "Web Design",
+      category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
@@ -21,11 +21,11 @@ export default function ScrollingGallery() {
       image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
-      iframeUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=560&h=400&fit=crop&crop=center"
+      iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
       title: "Son Sound",
-      image: "/images/son_sound.webp",
+      image: "/images/son-sound.webp",
       category: "Brand Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
@@ -33,7 +33,7 @@ export default function ScrollingGallery() {
     {
       title: "Starbright",
       image: "/images/starbright.webp",
-      category: "Print Materials",
+      category: "Brand Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
@@ -55,19 +55,15 @@ export default function ScrollingGallery() {
 
   // Carousel navigation functions
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex === 0 ? galleryItems.length - 1 : prevIndex - 1
-      console.log('Previous: ', prevIndex, '->', newIndex)
-      return newIndex
-    })
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? galleryItems.length - 1 : prevIndex - 1
+    )
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex === galleryItems.length - 1 ? 0 : prevIndex + 1
-      console.log('Next: ', prevIndex, '->', newIndex)
-      return newIndex
-    })
+    setCurrentIndex((prevIndex) => 
+      prevIndex === galleryItems.length - 1 ? 0 : prevIndex + 1
+    )
   }
 
   // Modal functions
@@ -106,7 +102,6 @@ export default function ScrollingGallery() {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-2 text-white">Recent Projects</h2>
           <p className="text-xl text-neutral-300">A showcase of my latest design work</p>
-          <p className="text-sm text-neutral-400 mt-2">Current: {currentIndex + 1} of {galleryItems.length}</p>
         </div>
 
         <div className="relative">
