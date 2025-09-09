@@ -321,9 +321,9 @@ export default function ScrollingGallery() {
                       <h4 className="text-3xl font-bold mb-3">{item.title}</h4>
                       <p className="text-lg text-neutral-300 mb-4">{item.category}</p>
                       {item.iframeUrl && (
-                        <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <div className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg">
                           View Prototype
-                        </button>
+                        </div>
                       )}
                     </div>
                   </button>
