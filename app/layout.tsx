@@ -22,6 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${publicSans.variable} font-sans bg-neutral-950 text-white min-h-screen`}>
+        {/* Skip Navigation Link */}
+        <a 
+          href="#home" 
+          className="absolute -top-full left-4 bg-green-500 text-white px-4 py-2 rounded-lg z-50 focus:top-4 transition-all duration-200"
+        >
+          Skip to main content
+        </a>
         {children}
         <SpeedInsights />
         <Analytics />

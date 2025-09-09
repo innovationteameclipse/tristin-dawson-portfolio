@@ -262,7 +262,7 @@ export default function ScrollingGallery() {
     <section id="projects" className="mb-16">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold mb-2 text-white">Recent Projects</h3>
+          <h2 className="text-4xl font-bold mb-2 text-white">Recent Projects</h2>
           <p className="text-xl text-neutral-300">A showcase of my latest design work</p>
         </div>
 
@@ -295,8 +295,8 @@ export default function ScrollingGallery() {
                   className={`${item.rotation} transition-transform hover:scale-105`}
                   style={{ width: '560px', height: '400px' }}
                 >
-                  <div 
-                    className="relative group cursor-pointer block"
+                  <button 
+                    className="relative group cursor-pointer block w-full h-full"
                     onClick={(e) => {
                       // Prevent click if user is dragging
                       if (isDragging) {
@@ -308,6 +308,7 @@ export default function ScrollingGallery() {
                         openModal(item)
                       }
                     }}
+                    aria-label={`View ${item.title} project prototype`}
                   >
                     <Image
                       src={item.image}
@@ -325,7 +326,7 @@ export default function ScrollingGallery() {
                         </button>
                       )}
                     </div>
-                  </div>
+                  </button>
                 </div>
               </div>
             ))}
@@ -335,17 +336,24 @@ export default function ScrollingGallery() {
 
       {/* Modal */}
       {isModalOpen && selectedItem && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
+        >
           <div className="relative bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900">{selectedItem.title}</h3>
-                <p className="text-gray-600">{selectedItem.category}</p>
+                <h3 id="modal-title" className="text-2xl font-bold text-gray-900">{selectedItem.title}</h3>
+                <p id="modal-description" className="text-gray-600">{selectedItem.category}</p>
               </div>
               <button
                 onClick={closeModal}
                 className="text-gray-400 hover:text-gray-600 transition-colors p-2"
+                aria-label="Close modal"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -363,6 +371,8 @@ export default function ScrollingGallery() {
                   src={selectedItem.iframeUrl}
                   allowFullScreen
                   className="rounded-lg"
+                  title={`${selectedItem.title} prototype`}
+                  loading="lazy"
                 />
               </div>
             </div>

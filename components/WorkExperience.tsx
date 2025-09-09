@@ -1,7 +1,7 @@
 export default function WorkExperience() {
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-bold mb-6 text-white">Work Experience</h2>
+      <h2 className="text-4xl font-bold mb-6 text-white">Work Experience</h2>
       <div className="space-y-6">
         <div className="border-l-4 border-green-500 pl-6">
           <h3 className="text-xl font-semibold mb-2 text-white">Digital Designer</h3>

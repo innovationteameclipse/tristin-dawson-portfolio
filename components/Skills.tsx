@@ -114,7 +114,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
         <div ref={skillsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
             <div key={category} className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white mb-6 border-b border-neutral-600 pb-2">
+              <h3 className="text-3xl font-semibold text-white mb-6 border-b border-neutral-600 pb-2">
                 {category}
               </h3>
               
@@ -175,7 +175,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
 
         {/* Additional Skills Section */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-white mb-8">Additional Tools & Technologies</h3>
+          <h3 className="text-3xl font-semibold text-white mb-8">Additional Tools & Technologies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               "ComfyUI", "Everlytic", "Mailchimp", "Elementor", "WordPress", 

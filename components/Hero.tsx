@@ -10,7 +10,7 @@ interface HeroProps {
 export default function Hero({ gradientClass }: HeroProps) {
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Main content">
       {/* Video Background */}
       <video
         autoPlay
@@ -19,8 +19,10 @@ export default function Hero({ gradientClass }: HeroProps) {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         aria-label="Abstract wave animation background"
+        preload="metadata"
       >
         <source src="/images/wave-background-compressed.mp4" type="video/mp4" />
+        <track kind="captions" srcLang="en" label="English captions" />
         Your browser does not support the video tag.
       </video>
       
@@ -59,13 +61,10 @@ export default function Hero({ gradientClass }: HeroProps) {
       {/* Name and Title */}
       <h1 className="mb-4">
         <div className="text-5xl font-bold text-white">
-          Hey, I'm Tristin
+          Hey, I'm Tristin Dawson
         </div>
-        <div className="text-5xl font-bold text-white">
-          Dawson, Digital Designer
-        </div>
-        <div className="text-5xl font-bold text-white">
-          Web/UX/UI
+        <div className="text-3xl font-semibold text-neutral-300 mt-2">
+          Digital Designer - Web/UX/UI
         </div>
       </h1>
 
@@ -76,7 +75,7 @@ export default function Hero({ gradientClass }: HeroProps) {
 
       {/* Call to Action Buttons */}
       <div className="flex items-center justify-center space-x-8 mb-8">
-        <button className="px-6 py-3 bg-white text-neutral-950 font-medium rounded-2xl hover:bg-neutral-100 transition-colors">
+        <button className="px-8 py-4 bg-white text-neutral-950 font-medium rounded-2xl hover:bg-neutral-100 transition-colors min-h-[48px] min-w-[140px]">
           View My Work
         </button>
         <div className="flex items-center space-x-5">
@@ -91,17 +90,17 @@ export default function Hero({ gradientClass }: HeroProps) {
       </div>
 
       {/* Contact & Social Links */}
-      <div className="flex items-center justify-center space-x-6 mt-12">
-        <a href="tel:+27672356770" className="text-neutral-300 hover:text-white transition-colors" title="Call 067 235 6770">
+      <div className="flex items-center justify-center space-x-8 mt-12">
+        <a href="tel:+27672356770" className="text-neutral-300 hover:text-white transition-colors p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" title="Call 067 235 6770" aria-label="Call 067 235 6770">
           <Phone size={24} />
         </a>
-        <a href="mailto:tristin.dawson@gmail.com" className="text-neutral-300 hover:text-white transition-colors" title="Email tristin.dawson@gmail.com">
+        <a href="mailto:tristin.dawson@gmail.com" className="text-neutral-300 hover:text-white transition-colors p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" title="Email tristin.dawson@gmail.com" aria-label="Email tristin.dawson@gmail.com">
           <Mail size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/tristin-dawson/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
+        <a href="https://www.linkedin.com/in/tristin-dawson/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label="Visit Tristin's LinkedIn profile">
           <Linkedin size={24} />
         </a>
-        <a href="https://www.instagram.com/triiistiiin/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
+        <a href="https://www.instagram.com/triiistiiin/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label="Visit Tristin's Instagram profile">
           <Instagram size={24} />
         </a>
       </div>

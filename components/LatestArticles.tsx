@@ -25,7 +25,7 @@ export default function LatestArticles() {
   return (
     <section className="mb-16">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold mb-2">Latest Thoughts</h2>
+        <h2 className="text-4xl font-bold mb-2">Latest Thoughts</h2>
         <p className="text-light-gray">Some of my recent professional insights</p>
       </div>
       

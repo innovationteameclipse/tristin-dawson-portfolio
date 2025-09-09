@@ -97,11 +97,14 @@ const FAQ = () => {
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`px-6 py-3 rounded-xl text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`px-6 py-4 rounded-xl text-sm font-medium transition-colors whitespace-nowrap min-h-[48px] ${
                   activeTab === key
                     ? 'bg-white text-neutral-950'
                     : 'text-neutral-300 hover:text-white'
                 }`}
+                aria-selected={activeTab === key}
+                role="tab"
+                aria-controls={`tabpanel-${key}`}
               >
                 {category.title}
               </button>
@@ -110,14 +113,16 @@ const FAQ = () => {
         </div>
         
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-4" role="tabpanel" id={`tabpanel-${activeTab}`}>
           {faqCategories[activeTab as keyof typeof faqCategories].questions.map((faq, index) => (
             <div key={index} className="bg-neutral-800/30 backdrop-blur-md border border-neutral-600/20 rounded-2xl overflow-hidden">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-800/50 transition-colors"
+                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-neutral-800/50 transition-colors min-h-[60px]"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-white font-medium text-lg">{faq.question}</span>
+                <span id={`faq-question-${index}`} className="text-white font-medium text-lg">{faq.question}</span>
                 <div className="flex-shrink-0 ml-4">
                   {openIndex === index ? (
                     <ChevronUp className="text-neutral-300 w-5 h-5 transition-transform duration-300" />
@@ -128,9 +133,12 @@ const FAQ = () => {
               </button>
               
               <div 
+                id={`faq-answer-${index}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
               >
                 <div className="px-6 py-8 text-left min-h-[120px]">
                   <p className="text-lg text-neutral-300 leading-relaxed">{faq.answer}</p>
@@ -149,6 +157,7 @@ const FAQ = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-green-500 hover:text-white underline transition-colors"
+              aria-label="Visit Cursor AI code editor website"
             >
               Cursor
             </a>.
