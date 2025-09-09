@@ -108,9 +108,9 @@ export default function ScrollingGallery() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white p-3 rounded-full transition-colors pointer-events-auto touch-manipulation"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full transition-colors pointer-events-auto touch-manipulation flex items-center justify-center"
             aria-label="Previous project"
-            style={{ minWidth: '48px', minHeight: '48px' }}
+            style={{ width: '48px', height: '48px' }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -118,9 +118,9 @@ export default function ScrollingGallery() {
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white p-3 rounded-full transition-colors pointer-events-auto touch-manipulation"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full transition-colors pointer-events-auto touch-manipulation flex items-center justify-center"
             aria-label="Next project"
-            style={{ minWidth: '48px', minHeight: '48px' }}
+            style={{ width: '48px', height: '48px' }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
