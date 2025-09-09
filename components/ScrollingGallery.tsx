@@ -108,7 +108,7 @@ export default function ScrollingGallery() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full transition-colors pointer-events-auto touch-manipulation flex items-center justify-center"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
             aria-label="Previous project"
             style={{ width: '48px', height: '48px' }}
           >
@@ -118,7 +118,7 @@ export default function ScrollingGallery() {
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full transition-colors pointer-events-auto touch-manipulation flex items-center justify-center"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
             aria-label="Next project"
             style={{ width: '48px', height: '48px' }}
           >

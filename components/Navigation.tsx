@@ -55,7 +55,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-4 left-4 right-4 z-50 md:top-6 md:left-1/2 md:right-auto md:transform md:-translate-x-1/2" role="navigation" aria-label="Main navigation">
-      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-3 md:px-8 md:py-4 shadow-xl">
+      <div className="bg-neutral-800/80 backdrop-blur-md border border-neutral-600/20 rounded-2xl px-4 py-3 md:px-8 md:py-4 shadow-lg">
         <div className="flex items-center justify-between md:justify-center space-x-2 md:space-x-8 overflow-x-auto" role="menubar">
           <a 
             href="#home" 
