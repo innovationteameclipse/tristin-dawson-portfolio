@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Linkedin, Dribbble, Palette } from 'lucide-react'
+import { Instagram, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -15,13 +15,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/in/tristin-dawson/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="https://www.starbright.co.za" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
-              <Palette size={20} />
-            </a>
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">
-              <Dribbble size={20} />
-            </a>
-            <a href="#" className="text-neutral-300 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/triiistiiin/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
               <Instagram size={20} />
             </a>
           </div>

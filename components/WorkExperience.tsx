@@ -1,6 +1,6 @@
 export default function WorkExperience() {
   return (
-    <section>
+    <section className="mb-16">
       <h2 className="text-3xl font-bold mb-6 text-white">Work Experience</h2>
       <div className="space-y-6">
         <div className="border-l-4 border-green-500 pl-6">
@@ -8,7 +8,7 @@ export default function WorkExperience() {
           <p className="text-green-500 font-medium mb-1">Starbright</p>
           <p className="text-lg text-neutral-300 mb-2">Sep 2023 - Present • Centurion, Gauteng, South Africa</p>
           <p className="text-lg text-neutral-300 leading-relaxed">
-            Specializing in Website Design and User Interface Design for various clients. Creating user-friendly experiences using Figma and modern design tools.
+            Specialising in Website Design and User Interface Design for various clients. Creating user-friendly experiences using Figma and modern design tools.
           </p>
         </div>
         

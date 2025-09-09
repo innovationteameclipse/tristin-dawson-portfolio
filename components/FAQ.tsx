@@ -21,7 +21,7 @@ const FAQ = () => {
         },
         {
           question: "How do you handle tight deadlines and pressure?",
-          answer: "I thrive under pressure and have consistently delivered quality work under tight deadlines. For example, I once received nine PG Bison mailers at 1:30 PM on a Friday and stayed late to complete them all by 3 PM. I prioritize tasks, communicate clearly with stakeholders, and maintain high standards even when working quickly."
+          answer: "I thrive under pressure and have consistently delivered quality work under tight deadlines. For example, I once received nine PG Bison mailers at 1:30 PM on a Friday and stayed late to complete them all by 3 PM. I prioritise tasks, communicate clearly with stakeholders, and maintain high standards even when working quickly."
         }
       ]
     },
@@ -68,11 +68,11 @@ const FAQ = () => {
         },
         {
           question: "What motivates you in your work?",
-          answer: "I'm driven by the impact my designs have on businesses and users. Seeing a website I designed drive conversions, or an email campaign achieve high engagement rates, gives me immense satisfaction. I love solving creative problems and helping clients achieve their goals through thoughtful, user-centered design."
+          answer: "I'm driven by the impact my designs have on businesses and users. Seeing a website I designed drive conversions, or an email campaign achieve high engagement rates, gives me immense satisfaction. I love solving creative problems and helping clients achieve their goals through thoughtful, user-centred design."
         },
         {
           question: "How do you handle creative blocks or burnout?",
-          answer: "I recognize that creative blocks are normal and have developed strategies to overcome them. I step back, seek inspiration from different sources, and ask for feedback from team members. I also take breaks when needed and focus on self-care. My experience has taught me that pushing through blocks often leads to breakthrough solutions."
+          answer: "I recognise that creative blocks are normal and have developed strategies to overcome them. I step back, seek inspiration from different sources, and ask for feedback from team members. I also take breaks when needed and focus on self-care. My experience has taught me that pushing through blocks often leads to breakthrough solutions."
         }
       ]
     }
@@ -132,8 +132,8 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 py-8 text-center flex items-center justify-center min-h-[120px]">
-                  <p className="text-md text-neutral-300 leading-relaxed">{faq.answer}</p>
+                <div className="px-6 py-8 text-left min-h-[120px]">
+                  <p className="text-lg text-neutral-300 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
             </div>

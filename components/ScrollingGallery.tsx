@@ -13,43 +13,51 @@ export default function ScrollingGallery() {
   const [velocity, setVelocity] = useState(0)
   const [lastX, setLastX] = useState(0)
   const [lastTime, setLastTime] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState<any>(null)
 
   const galleryItems = [
     {
-      title: "Website Redesign",
-      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=560&h=400&fit=crop&crop=center",
+      title: "PG Bison",
+      image: "/images/pg_bison.png",
       category: "Web Design",
-      rotation: "rotate-1"
+      rotation: "rotate-1",
+      iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
     {
-      title: "Mobile App UI",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=560&h=400&fit=crop&crop=center",
-      category: "UI Design",
-      rotation: "-rotate-1"
+      title: "Korridor",
+      image: "/images/korridor.png",
+      category: "Website Design",
+      rotation: "-rotate-1",
+      iframeUrl: "https://embed.figma.com/proto/WHHuh6Yx3o8bvpXeqnUK1k/Korridor-Home-Page-Concept?node-id=6-25&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A25&embed-host=share"
     },
     {
-      title: "Brand Identity",
-      image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=560&h=400&fit=crop&crop=center",
-      category: "Branding",
-      rotation: "rotate-2"
+      title: "Son Sound",
+      image: "/images/son-sound.png",
+      category: "Website Design",
+      rotation: "rotate-2",
+      iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Dashboard Design",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=560&h=400&fit=crop&crop=center",
-      category: "UX Design",
-      rotation: "-rotate-2"
+      title: "Starbright",
+      image: "/images/starbright.png",
+      category: "Website Design",
+      rotation: "-rotate-2",
+      iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
     {
-      title: "Print Materials",
-      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=560&h=400&fit=crop&crop=center",
-      category: "Print Design",
-      rotation: "rotate-1"
+      title: "Restack",
+      image: "/images/restack.png",
+      category: "Website Design",
+      rotation: "rotate-1",
+      iframeUrl: "https://embed.figma.com/proto/J6j1TaA5cytonFvmgYxWOL/Restack?node-id=710-292&scaling=scale-down-width&content-scaling=fixed&page-id=709%3A291&starting-point-node-id=710%3A292&embed-host=share"
     },
     {
-      title: "Social Media",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=560&h=400&fit=crop&crop=center",
-      category: "Digital Marketing",
-      rotation: "-rotate-1"
+      title: "IPP Attorneys",
+      image: "/images/ipp.png",
+      category: "Website Design",
+      rotation: "-rotate-1",
+      iframeUrl: "https://embed.figma.com/proto/lBngJvHUw4xkcX7BaalNAE/Website-Concept?node-id=263-18&scaling=scale-down-width&content-scaling=fixed&page-id=263%3A17&starting-point-node-id=263%3A18&embed-host=share"
     }
   ]
 
@@ -220,6 +228,36 @@ export default function ScrollingGallery() {
     requestAnimationFrame(animate)
   }
 
+  // Modal functions
+  const openModal = (item: any) => {
+    setSelectedItem(item)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedItem(null)
+  }
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeModal()
+      }
+    }
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isModalOpen])
+
   return (
     <section id="projects" className="mb-16">
       <div className="max-w-7xl mx-auto px-8">
@@ -257,7 +295,20 @@ export default function ScrollingGallery() {
                   className={`${item.rotation} transition-transform hover:scale-105`}
                   style={{ width: '560px', height: '400px' }}
                 >
-                  <div className="relative group cursor-pointer">
+                  <div 
+                    className="relative group cursor-pointer block"
+                    onClick={(e) => {
+                      // Prevent click if user is dragging
+                      if (isDragging) {
+                        e.preventDefault()
+                        return
+                      }
+                      // Only open modal if item has iframeUrl
+                      if (item.iframeUrl) {
+                        openModal(item)
+                      }
+                    }}
+                  >
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -265,9 +316,14 @@ export default function ScrollingGallery() {
                       height={400}
                       className="w-full h-full object-cover rounded-2xl shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white">
-                      <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
-                      <p className="text-sm text-neutral-300">{item.category}</p>
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white">
+                      <h4 className="text-3xl font-bold mb-3">{item.title}</h4>
+                      <p className="text-lg text-neutral-300 mb-4">{item.category}</p>
+                      {item.iframeUrl && (
+                        <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                          View Prototype
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -276,6 +332,43 @@ export default function ScrollingGallery() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && selectedItem && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="relative bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">{selectedItem.title}</h3>
+                <p className="text-gray-600">{selectedItem.category}</p>
+              </div>
+              <button
+                onClick={closeModal}
+                className="text-gray-400 hover:text-gray-600 transition-colors p-2"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="p-6">
+              <div className="aspect-video w-full">
+                <iframe
+                  style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
+                  width="100%"
+                  height="100%"
+                  src={selectedItem.iframeUrl}
+                  allowFullScreen
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

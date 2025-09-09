@@ -206,10 +206,10 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
   }
 
   return (
-    <section id="testimonials" className="mb-16 p-0">
-      <div className="max-w-[1200px] mx-auto text-center">
+    <section id="testimonials" className="mb-16">
+      <div className="max-w-[1200px] mx-auto px-8 text-center">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Team Accolades</h2>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
             Recognition from colleagues who've witnessed my dedication, creativity, and collaborative spirit in action

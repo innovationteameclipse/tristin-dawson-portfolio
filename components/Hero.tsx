@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Linkedin, Dribbble, Palette } from 'lucide-react'
+import { Instagram, Linkedin, Phone, Mail } from 'lucide-react'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -82,26 +82,26 @@ export default function Hero({ gradientClass }: HeroProps) {
         <div className="flex items-center space-x-5">
           <div className="relative">
             {/* Second ring effect - positioned directly on the red dot */}
-            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-red-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-green-500 rounded-full animate-ping opacity-75"></div>
             {/* Original red dot */}
-            <div className="w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
+            <div className="w-3 h-3 bg-green-500 rounded-full shadow-lg"></div>
           </div>
-          <span className="text-red-500 text-sm font-medium">Not Open To New Opportunities</span>
+          <span className="text-green-500 text-sm font-medium">Open To New Opportunities</span>
         </div>
       </div>
 
-      {/* Social Links */}
+      {/* Contact & Social Links */}
       <div className="flex items-center justify-center space-x-6 mt-12">
+        <a href="tel:+27672356770" className="text-neutral-300 hover:text-white transition-colors" title="Call 067 235 6770">
+          <Phone size={24} />
+        </a>
+        <a href="mailto:tristin.dawson@gmail.com" className="text-neutral-300 hover:text-white transition-colors" title="Email tristin.dawson@gmail.com">
+          <Mail size={24} />
+        </a>
         <a href="https://www.linkedin.com/in/tristin-dawson/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
           <Linkedin size={24} />
         </a>
-        <a href="https://www.starbright.co.za" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
-          <Palette size={24} />
-        </a>
-        <a href="#" className="text-neutral-300 hover:text-white transition-colors">
-          <Dribbble size={24} />
-        </a>
-        <a href="#" className="text-neutral-300 hover:text-white transition-colors">
+        <a href="https://www.instagram.com/triiistiiin/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white transition-colors">
           <Instagram size={24} />
         </a>
       </div>

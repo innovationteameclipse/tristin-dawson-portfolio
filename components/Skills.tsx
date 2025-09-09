@@ -6,6 +6,7 @@ interface Skill {
   name: string
   percentage: number
   category: string
+  isLearning?: boolean
 }
 
 interface SkillsProps {
@@ -31,7 +32,14 @@ const Skills = ({ gradientClass }: SkillsProps) => {
     { name: "Project Management", percentage: 82, category: "Soft Skills" },
     { name: "Creative Problem Solving", percentage: 90, category: "Soft Skills" },
     { name: "Team Collaboration", percentage: 95, category: "Soft Skills" },
-    { name: "Vibecoding", percentage: 100, category: "Development" }
+    { name: "Vibecoding", percentage: 100, category: "Development" },
+    { name: "HTML", percentage: 65, category: "Development" },
+    { name: "CSS", percentage: 70, category: "Development" }
+  ]
+
+  const learningSkills: Skill[] = [
+    { name: "React", percentage: 11, category: "Learning" },
+    { name: "Next.js", percentage: 8, category: "Learning" }
   ]
 
   // Group skills by category
@@ -58,6 +66,16 @@ const Skills = ({ gradientClass }: SkillsProps) => {
                 }))
               }, index * 100) // Stagger by 100ms for each skill
             })
+            
+            // Start animation for learning skills with staggered timing
+            learningSkills.forEach((skill, index) => {
+              setTimeout(() => {
+                setAnimatedPercentages(prev => ({
+                  ...prev,
+                  [skill.name]: skill.percentage
+                }))
+              }, (skills.length + index) * 100) // Continue staggering after main skills
+            })
           }
         })
       },
@@ -70,7 +88,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
 
     // Fallback: ensure all skills show after 2 seconds even if intersection observer fails
     const fallbackTimer = setTimeout(() => {
-      const allPercentages = skills.reduce((acc, skill) => {
+      const allPercentages = [...skills, ...learningSkills].reduce((acc, skill) => {
         acc[skill.name] = skill.percentage
         return acc
       }, {} as { [key: string]: number })
@@ -84,7 +102,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
   }, [])
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="mb-16">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
@@ -106,7 +124,7 @@ const Skills = ({ gradientClass }: SkillsProps) => {
                     <div className="flex justify-between items-center">
                       <span className="text-white font-medium">{skill.name}</span>
                       <span className="text-white font-semibold">
-                        {animatedPercentages[skill.name] || 0}%
+                        {skill.isLearning ? "Learning" : `${animatedPercentages[skill.name] || 0}%`}
                       </span>
                     </div>
                     
@@ -125,13 +143,43 @@ const Skills = ({ gradientClass }: SkillsProps) => {
           ))}
         </div>
 
+        {/* Learning Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-white mb-4">Currently Learning</h3>
+            <p className="text-lg text-neutral-300">
+              Technologies I'm actively exploring and developing skills in
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            {learningSkills.map((skill) => (
+              <div key={skill.name} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-white font-medium text-lg">{skill.name}</span>
+                  <span className="text-blue-400 font-semibold text-lg">Learning</span>
+                </div>
+                
+                <div className="w-full bg-neutral-800 rounded-2xl h-4 overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transition-all duration-1000 ease-out"
+                    style={{ 
+                      width: `${animatedPercentages[skill.name] || 0}%`
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Additional Skills Section */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-semibold text-white mb-8">Additional Tools & Technologies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               "ComfyUI", "Everlytic", "Mailchimp", "Elementor", "WordPress", 
-              "Cursor", "HTML", "CSS", "Canva", "Leadtrekker"
+              "Cursor", "Canva", "Leadtrekker", "Zoho CRM"
             ].map((tool) => (
               <span 
                 key={tool}
