@@ -81,11 +81,11 @@ export default function Hero({ gradientClass }: HeroProps) {
         <div className="flex items-center space-x-5">
           <div className="relative">
             {/* Second ring effect - positioned directly on the red dot */}
-            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-red-500 rounded-full animate-ping opacity-75"></div>
             {/* Original red dot */}
-            <div className="w-3 h-3 bg-green-500 rounded-full shadow-lg"></div>
+            <div className="w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
           </div>
-          <span className="text-green-500 text-sm font-medium">Open To New Opportunities</span>
+          <span className="text-red-500 text-sm font-medium">Not Open To New Opportunities</span>
         </div>
       </div>
 

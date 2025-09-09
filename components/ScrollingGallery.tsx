@@ -139,39 +139,41 @@ export default function ScrollingGallery() {
                       : 'opacity-0 z-0 pointer-events-none'
                   }`}
                 >
-                  <button 
+                  {/* <button 
                     className="relative group cursor-pointer block w-full h-full"
                     onClick={() => openModal(item)}
                     aria-label={`View ${item.title} project prototype`}
-                  >
+                  > */}
+                    <div className="relative group block w-full h-full">
                     <Image
                       src={item.image}
                       alt={item.title}
-                      fill
-                      className="object-cover rounded-2xl shadow-lg"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 900px"
-                      quality={90}
-                      priority={index === 0}
-                    />
-                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white p-4">
-                      <h4 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-center">{item.title}</h4>
-                      <p className="text-sm md:text-lg text-neutral-300 mb-3 md:mb-4 text-center">{item.category}</p>
-                      {item.iframeUrl && (
-                        <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg text-sm md:text-base">
-                          View Prototype
-                        </div>
-                      )}
+                        fill
+                        className="object-cover rounded-2xl shadow-lg"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 900px"
+                        quality={90}
+                        priority={index === 0}
+                      />
+                      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white p-4">
+                        <h4 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-center">{item.title}</h4>
+                        <p className="text-sm md:text-lg text-neutral-300 mb-3 md:mb-4 text-center">{item.category}</p>
+                        {/* {item.iframeUrl && (
+                          <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg text-sm md:text-base">
+                            View Prototype
+                          </div>
+                        )} */}
+                      </div>
                     </div>
-                  </button>
+                  {/* </button> */}
                 </div>
               ))}
-            </div>
+              </div>
           </div>
         </div>
       </div>
 
-      {/* Modal */}
-      {isModalOpen && selectedItem && (
+      {/* Modal - Commented out */}
+      {/* {isModalOpen && selectedItem && (
         <div 
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
           role="dialog"
@@ -180,7 +182,6 @@ export default function ScrollingGallery() {
           aria-describedby="modal-description"
         >
           <div className="relative bg-white rounded-2xl max-w-6xl w-full h-[90vh] overflow-hidden flex flex-col">
-            {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
                 <h3 id="modal-title" className="text-2xl font-bold text-gray-900">{selectedItem.title}</h3>
@@ -197,7 +198,6 @@ export default function ScrollingGallery() {
               </button>
             </div>
             
-            {/* Modal Content */}
             <div className="flex-1 p-6 flex flex-col">
               <div className="flex-1 w-full">
                 <iframe
@@ -214,7 +214,7 @@ export default function ScrollingGallery() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </section>
   )
 }
