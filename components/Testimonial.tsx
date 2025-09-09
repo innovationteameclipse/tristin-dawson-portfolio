@@ -231,7 +231,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
           style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
         >
           {/* Testimonial Slides Container */}
-          <div className="relative w-full h-[320px] p-10">
+          <div className="relative w-full min-h-[400px] md:h-[320px] p-6 md:p-10">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -259,12 +259,12 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
                 {/* Testimonial Content - Centered */}
                 <div className="flex flex-col justify-center items-center h-full">
                   {/* Quote Section */}
-                  <div className="flex items-start justify-center mb-8">
-                    <Quote size={40} className="text-neutral-300 mr-3" />
-                    <blockquote className="text-xl text-neutral-300 italic leading-relaxed max-w-3xl">
+                  <div className="flex items-start justify-center mb-6 md:mb-8">
+                    <Quote size={32} className="text-neutral-300 mr-2 md:mr-3 flex-shrink-0" />
+                    <blockquote className="text-lg md:text-xl text-neutral-300 italic leading-relaxed max-w-3xl">
                       {testimonial.quote}
                     </blockquote>
-                    <Quote size={40} className="text-neutral-300 ml-3 transform rotate-180" />
+                    <Quote size={32} className="text-neutral-300 ml-2 md:ml-3 transform rotate-180 flex-shrink-0" />
                   </div>
 
                   {/* Author Section */}

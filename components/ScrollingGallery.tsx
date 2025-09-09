@@ -268,13 +268,13 @@ export default function ScrollingGallery() {
 
         <div className="relative overflow-hidden">
           {/* Fade Masks */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
           
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex space-x-16 py-8 px-8 overflow-x-auto scrollbar-hide cursor-grab select-none"
+            className="flex space-x-8 md:space-x-16 py-8 px-4 md:px-8 overflow-x-auto scrollbar-hide cursor-grab select-none"
             style={{ 
               userSelect: 'none',
               scrollBehavior: 'auto',
@@ -292,8 +292,7 @@ export default function ScrollingGallery() {
             {duplicatedItems.map((item, index) => (
               <div key={index} className="flex-shrink-0">
                 <div 
-                  className={`${item.rotation} transition-transform hover:scale-105`}
-                  style={{ width: '560px', height: '400px' }}
+                  className={`${item.rotation} transition-transform hover:scale-105 w-80 h-60 md:w-[560px] md:h-[400px]`}
                 >
                   <button 
                     className="relative group cursor-pointer block w-full h-full"
@@ -316,12 +315,13 @@ export default function ScrollingGallery() {
                       width={560}
                       height={400}
                       className="w-full h-full object-cover rounded-2xl shadow-lg"
+                      sizes="(max-width: 768px) 320px, 560px"
                     />
-                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white">
-                      <h4 className="text-3xl font-bold mb-3">{item.title}</h4>
-                      <p className="text-lg text-neutral-300 mb-4">{item.category}</p>
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white p-4">
+                      <h4 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-center">{item.title}</h4>
+                      <p className="text-sm md:text-lg text-neutral-300 mb-3 md:mb-4 text-center">{item.category}</p>
                       {item.iframeUrl && (
-                        <div className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg">
+                         <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg text-sm md:text-base">
                           View Prototype
                         </div>
                       )}
