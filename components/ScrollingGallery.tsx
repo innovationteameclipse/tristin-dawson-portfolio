@@ -19,42 +19,42 @@ export default function ScrollingGallery() {
   const galleryItems = [
     {
       title: "PG Bison",
-      image: "/images/pg_bison.png",
+      image: "/images/pg_bison.webp",
       category: "Web Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
     {
       title: "Korridor",
-      image: "/images/korridor.png",
+      image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/WHHuh6Yx3o8bvpXeqnUK1k/Korridor-Home-Page-Concept?node-id=6-25&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A25&embed-host=share"
     },
     {
       title: "Son Sound",
-      image: "/images/son-sound.png",
+      image: "/images/son-sound.webp",
       category: "Website Design",
       rotation: "rotate-2",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
       title: "Starbright",
-      image: "/images/starbright.png",
+      image: "/images/starbright.webp",
       category: "Website Design",
       rotation: "-rotate-2",
       iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
     {
       title: "Restack",
-      image: "/images/restack.png",
+      image: "/images/restack.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/J6j1TaA5cytonFvmgYxWOL/Restack?node-id=710-292&scaling=scale-down-width&content-scaling=fixed&page-id=709%3A291&starting-point-node-id=710%3A292&embed-host=share"
     },
     {
       title: "IPP Attorneys",
-      image: "/images/ipp.png",
+      image: "/images/ipp.webp",
       category: "Website Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/lBngJvHUw4xkcX7BaalNAE/Website-Concept?node-id=263-18&scaling=scale-down-width&content-scaling=fixed&page-id=263%3A17&starting-point-node-id=263%3A18&embed-host=share"

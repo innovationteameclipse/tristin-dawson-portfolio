@@ -23,79 +23,79 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
       quote: "Tristin absolutely smashed designing the logo for Bright Insight. Within a few days he came up with multiple logo ideas and delivered the final set that I was absolutely obsessed with!",
       author: "Vivienne",
       role: "Former Team Member",
-      image: "/images/vivienne.png"
+      image: "/images/vivienne.webp"
     },
     {
       quote: "Tristin kept a positive attitude and designed a second draft with their needs in mind. The client came back and informed us that their team LOVED it with no changes needed.",
       author: "Nici",
       role: "Team Member",
-      image: "/images/nici.png"
+      image: "/images/nici.webp"
     },
     {
       quote: "Tristin has stepped up to the challenge and approached all new projects with a positive attitude and open mind. He's taken on additional responsibility while managing his existing workload.",
       author: "Megan",
       role: "Former Team Member",
-      image: "/images/megan.png"
+      image: "/images/megan.webp"
     },
     {
       quote: "Tristin never turns down a request for assistance. From my first days at Starbright, I've been able to rely on him for help with design inspiration, creative challenges, and software support.",
       author: "Esma",
       role: "Former Team Member",
-      image: "/images/esma.png"
+      image: "/images/esma.webp"
     },
     {
       quote: "Tristin delivered high quality work for Stargas by creating excellent email newsletters. Despite unclear client requirements, he took initiative to call them and resolve confusion.",
       author: "Lara",
       role: "Team Member",
-      image: "/images/lara.png"
+      image: "/images/lara.webp"
     },
     {
       quote: "I asked Tristin to help design a heading and eye candy for the AOG wall. Despite being incredibly busy, he sent me 3 great designs. The wall is going to look amazing!",
       author: "Lara",
       role: "Team Member",
-      image: "/images/lara.png"
+      image: "/images/lara.webp"
     },
     {
       quote: "Tristin went above and beyond to assist me with Haval PTA. He quickly found the client's drive path and provided access to all the images I needed.",
       author: "Dorette",
       role: "Team Member",
-      image: "/images/dorette.png"
+      image: "/images/dorette.webp"
     },
     {
       quote: "Tristin came up with the idea to test the Event Planner on Discord. Well done for being creative and taking time to improve how we do things!",
       author: "Wayne",
       role: "Technical Director",
-      image: "/images/wayne.png"
+      image: "/images/wayne.webp"
     },
     {
       quote: "Tristin demonstrated excitement for the arcade machine project I proposed. He sent design schematics, store links, and volunteered to create a Blender model. Great initiative!",
       author: "Wikus",
       role: "Team Member",
-      image: "/images/wikus.png"
+      image: "/images/wikus.webp"
     },
     {
       quote: "Tristin was tasked with creating an HTML email signature for Creodata. He persevered for days, figured it out himself, and worked after hours to meet the deadline.",
       author: "Megan",
       role: "Former Team Member",
-      image: "/images/megan.png"
+      image: "/images/megan.webp"
     },
     {
       quote: "IB Portal campaigns were difficult with external designers. When they requested a new banner close to crunch time, Tristin jumped in and we had it ready in minutes.",
       author: "Clinton",
       role: "Team Member",
-      image: "/images/clinton.png"
+      image: "/images/clinton.webp"
     },
     {
       quote: "Tristin designed and coded a mailer for our September spring special, plus built a custom landing page with form validation and Leadtrekker integration. High-quality work delivered late into the night!",
       author: "Lourens",
       role: "Team Member",
-      image: "/images/lourens.png"
+      image: "/images/lourens.webp"
     },
     {
       quote: "Tristin focused deeply on his tasks while actively supporting teammates. His contributions to the Starbright website and rebranding have been top-tier, earning excellent feedback.",
       author: "Brendan",
       role: "Team Member",
-      image: "/images/brendan.png"
+      image: "/images/brendan.webp"
     }
   ]
 
