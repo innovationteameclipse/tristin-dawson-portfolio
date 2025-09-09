@@ -98,7 +98,7 @@ export default function ScrollingGallery() {
 
   return (
     <section id="projects" className="mb-16">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-[1400px] mx-auto px-8">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-2 text-white">Recent Projects</h2>
           <p className="text-xl text-neutral-300">A showcase of my latest design work</p>
@@ -149,7 +149,9 @@ export default function ScrollingGallery() {
                       alt={item.title}
                       fill
                       className="object-cover rounded-2xl shadow-lg"
-                      sizes="(max-width: 768px) 100vw, 80vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                      quality={90}
+                      priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white p-4">
                       <h4 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-center">{item.title}</h4>
