@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Public_Sans } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const publicSans = Public_Sans({ 
@@ -21,6 +23,8 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${publicSans.variable} font-sans bg-neutral-950 text-white min-h-screen`}>
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
