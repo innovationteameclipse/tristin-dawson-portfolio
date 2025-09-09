@@ -252,6 +252,7 @@ export default function ScrollingGallery() {
   }
 
   const goToPrevious = () => {
+    console.log('Previous button clicked!')
     if (scrollContainerRef.current) {
       const newIndex = currentIndex > 0 ? currentIndex - 1 : galleryItems.length - 1
       setCurrentIndex(newIndex)
@@ -266,6 +267,7 @@ export default function ScrollingGallery() {
   }
 
   const goToNext = () => {
+    console.log('Next button clicked!')
     if (scrollContainerRef.current) {
       const newIndex = currentIndex < galleryItems.length - 1 ? currentIndex + 1 : 0
       setCurrentIndex(newIndex)
@@ -298,16 +300,19 @@ export default function ScrollingGallery() {
     }
   }, [isModalOpen])
 
-  // Update current index on scroll
+  // Update current index on scroll (mobile only)
   useEffect(() => {
     const container = scrollContainerRef.current
     if (!container) return
 
     const handleScroll = () => {
-      const scrollLeft = container.scrollLeft
-      const itemWidth = getItemWidth()
-      const newIndex = Math.round(scrollLeft / itemWidth)
-      setCurrentIndex(newIndex)
+      // Only update index on mobile (when arrows are visible)
+      if (window.innerWidth < 768) {
+        const scrollLeft = container.scrollLeft
+        const itemWidth = getItemWidth()
+        const newIndex = Math.round(scrollLeft / itemWidth)
+        setCurrentIndex(newIndex)
+      }
     }
 
     container.addEventListener('scroll', handleScroll)
@@ -326,8 +331,9 @@ export default function ScrollingGallery() {
           {/* Mobile Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-50 bg-neutral-800/90 hover:bg-neutral-700/90 text-white p-3 rounded-full transition-colors md:hidden pointer-events-auto touch-manipulation"
             aria-label="Previous project"
+            style={{ minWidth: '48px', minHeight: '48px' }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -335,8 +341,9 @@ export default function ScrollingGallery() {
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-50 bg-neutral-800/90 hover:bg-neutral-700/90 text-white p-3 rounded-full transition-colors md:hidden pointer-events-auto touch-manipulation"
             aria-label="Next project"
+            style={{ minWidth: '48px', minHeight: '48px' }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -350,7 +357,7 @@ export default function ScrollingGallery() {
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex space-x-8 md:space-x-16 py-8 px-4 md:px-8 overflow-x-auto scrollbar-hide cursor-grab select-none md:overflow-x-auto snap-x snap-mandatory"
+            className="flex space-x-8 md:space-x-16 py-8 px-4 md:px-8 overflow-x-auto scrollbar-hide cursor-grab select-none md:overflow-x-auto snap-x snap-mandatory relative z-10"
             style={{ 
               userSelect: 'none',
               scrollBehavior: 'auto',
