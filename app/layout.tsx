@@ -11,7 +11,7 @@ const publicSans = Public_Sans({
 
 export const metadata: Metadata = {
   title: 'Tristin Dawson - Digital Designer | Web/UX/UI Design Portfolio',
-  description: 'Self-taught Digital Designer with 5+ years experience specialising in Website Design, UI/UX, and Brand Identity. View my portfolio featuring projects for major brands across automotive, retail, and energy sectors.',
+  description: 'Self-taught Digital Designer with 5+ years experience specialising in Website Design, UI/UX, and Brand Identity. View my portfolio featuring projects for major brands across manufacturing, fintech, events, marketing, cybersecurity, and legal sectors.',
   keywords: ['Digital Designer', 'Web Design', 'UI Design', 'UX Design', 'Brand Identity', 'Figma', 'Adobe Creative Suite', 'Portfolio', 'South Africa'],
   authors: [{ name: 'Tristin Dawson' }],
   creator: 'Tristin Dawson',

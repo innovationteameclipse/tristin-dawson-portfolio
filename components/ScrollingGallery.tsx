@@ -10,35 +10,35 @@ export default function ScrollingGallery() {
 
   const galleryItems = [
     {
-      title: "Construction Company",
+      title: "Manufacturing Company",
       image: "/images/pg_bison.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
     {
-      title: "Property Development",
+      title: "Fintech Company",
       image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Audio Brand",
+      title: "Sound & Lighting Events",
       image: "/images/son-sound.webp",
       category: "Brand Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Energy Company",
+      title: "Marketing Agency",
       image: "/images/starbright.webp",
       category: "Brand Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
     {
-      title: "Tech Platform",
+      title: "Cybersecurity Company",
       image: "/images/restack.webp",
       category: "Website Design",
       rotation: "rotate-1",

@@ -13,11 +13,11 @@ const FAQ = () => {
       questions: [
         {
           question: "Tell me about your design experience and background?",
-          answer: "I'm a Digital Designer with over 5 years of experience in corporate marketing, specializing in web design, UI/UX, and brand identity. I'm self-taught, which has given me a unique perspective and strong problem-solving skills. I've worked with major brands across automotive, retail, and energy sectors, delivering high-quality designs that drive business results."
+          answer: "I'm a Digital Designer with over 5 years of experience in corporate marketing, specializing in web design, UI/UX, and brand identity. I'm self-taught, which has given me a unique perspective and strong problem-solving skills. I've worked with major brands across manufacturing, fintech, events, marketing, cybersecurity, and legal sectors, delivering high-quality designs that drive business results."
         },
         {
           question: "What industries have you worked in?",
-          answer: "I've worked across diverse industries including automotive, retail, energy, and various other sectors. This exposure has taught me to quickly understand different business models, target audiences, and industry-specific design requirements. I can adapt my design approach to any industry."
+          answer: "I've worked across diverse industries including manufacturing, fintech, events, marketing, cybersecurity, legal, automotive, and various other sectors. This exposure has taught me to quickly understand different business models, target audiences, and industry-specific design requirements. I can adapt my design approach to any industry."
         },
         {
           question: "How do you handle tight deadlines and pressure?",
