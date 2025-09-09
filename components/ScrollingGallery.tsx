@@ -10,42 +10,42 @@ export default function ScrollingGallery() {
 
   const galleryItems = [
     {
-      title: "PG Bison",
+      title: "Construction Company",
       image: "/images/pg_bison.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
     {
-      title: "Korridor",
+      title: "Property Development",
       image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Son Sound",
+      title: "Audio Brand",
       image: "/images/son-sound.webp",
       category: "Brand Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Starbright",
+      title: "Energy Company",
       image: "/images/starbright.webp",
       category: "Brand Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
     {
-      title: "Restack",
+      title: "Tech Platform",
       image: "/images/restack.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/J6j1TaA5cytonFvmgYxWOL/Restack?node-id=710-292&scaling=scale-down-width&content-scaling=fixed&page-id=709%3A291&starting-point-node-id=710%3A292&embed-host=share"
     },
     {
-      title: "IPP Attorneys",
+      title: "Legal Practice",
       image: "/images/ipp.webp",
       category: "Website Design",
       rotation: "-rotate-1",

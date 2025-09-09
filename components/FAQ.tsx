@@ -13,15 +13,15 @@ const FAQ = () => {
       questions: [
         {
           question: "Tell me about your design experience and background?",
-          answer: "I'm a Digital Designer with over 5 years of experience in corporate marketing, specializing in web design, UI/UX, and brand identity. I'm self-taught, which has given me a unique perspective and strong problem-solving skills. I've worked with major brands like Haval, PG Bison, and Stargas, delivering high-quality designs that drive business results."
+          answer: "I'm a Digital Designer with over 5 years of experience in corporate marketing, specializing in web design, UI/UX, and brand identity. I'm self-taught, which has given me a unique perspective and strong problem-solving skills. I've worked with major brands across automotive, retail, and energy sectors, delivering high-quality designs that drive business results."
         },
         {
           question: "What industries have you worked in?",
-          answer: "I've worked across diverse industries including automotive (Haval), retail (PG Bison), energy (Stargas), and various other sectors. This exposure has taught me to quickly understand different business models, target audiences, and industry-specific design requirements. I can adapt my design approach to any industry."
+          answer: "I've worked across diverse industries including automotive, retail, energy, and various other sectors. This exposure has taught me to quickly understand different business models, target audiences, and industry-specific design requirements. I can adapt my design approach to any industry."
         },
         {
           question: "How do you handle tight deadlines and pressure?",
-          answer: "I thrive under pressure and have consistently delivered quality work under tight deadlines. For example, I once received nine PG Bison mailers at 1:30 PM on a Friday and stayed late to complete them all by 3 PM. I prioritise tasks, communicate clearly with stakeholders, and maintain high standards even when working quickly."
+          answer: "I thrive under pressure and have consistently delivered quality work under tight deadlines. For example, I once received nine client mailers at 1:30 PM on a Friday and stayed late to complete them all by 3 PM. I prioritise tasks, communicate clearly with stakeholders, and maintain high standards even when working quickly."
         }
       ]
     },
@@ -51,7 +51,7 @@ const FAQ = () => {
         },
         {
           question: "Describe a challenging project and how you handled it?",
-          answer: "One challenging project was the Stargas email newsletters where the client provided unclear information. I took the initiative to call them directly, resolve the confusion, and worked after hours to deliver the designs by morning. Despite the complexity, I maintained calm communication and delivered high-quality work that exceeded expectations."
+          answer: "One challenging project was an email newsletter campaign where the client provided unclear information. I took the initiative to call them directly, resolve the confusion, and worked after hours to deliver the designs by morning. Despite the complexity, I maintained calm communication and delivered high-quality work that exceeded expectations."
         },
         {
           question: "How do you collaborate with team members and stakeholders?",

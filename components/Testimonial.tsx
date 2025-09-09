@@ -20,7 +20,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
 
   const testimonials = [
     {
-      quote: "Tristin absolutely smashed designing the logo for Bright Insight. Within a few days he came up with multiple logo ideas and delivered the final set that I was absolutely obsessed with!",
+      quote: "Tristin absolutely smashed designing the logo for our client. Within a few days he came up with multiple logo ideas and delivered the final set that I was absolutely obsessed with!",
       author: "Vivienne",
       role: "Former Team Member",
       image: "/images/vivienne.webp"
@@ -44,7 +44,7 @@ export default function Testimonial({ gradientClass }: TestimonialProps) {
       image: "/images/esma.webp"
     },
     {
-      quote: "Tristin delivered high quality work for Stargas by creating excellent email newsletters. Despite unclear client requirements, he took initiative to call them and resolve confusion.",
+      quote: "Tristin delivered high quality work for our client by creating excellent email newsletters. Despite unclear client requirements, he took initiative to call them and resolve confusion.",
       author: "Lara",
       role: "Team Member",
       image: "/images/lara.webp"
