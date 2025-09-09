@@ -10,7 +10,7 @@ interface HeroProps {
 export default function Hero({ gradientClass }: HeroProps) {
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Main content">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24" aria-label="Main content">
       {/* Video Background */}
       <video
         autoPlay

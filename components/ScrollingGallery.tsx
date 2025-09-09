@@ -267,14 +267,54 @@ export default function ScrollingGallery() {
         </div>
 
         <div className="relative overflow-hidden">
-          {/* Fade Masks */}
-          <div className="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
+          {/* Mobile Navigation Arrows */}
+          <button
+            onClick={() => {
+              if (scrollContainerRef.current) {
+                const currentScroll = scrollContainerRef.current.scrollLeft
+                const itemWidth = 320 + 32 // width + gap
+                const newScroll = Math.max(0, currentScroll - itemWidth)
+                scrollContainerRef.current.scrollTo({
+                  left: newScroll,
+                  behavior: 'smooth'
+                })
+              }
+            }}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
+            aria-label="Previous project"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => {
+              if (scrollContainerRef.current) {
+                const currentScroll = scrollContainerRef.current.scrollLeft
+                const itemWidth = 320 + 32 // width + gap
+                const newScroll = currentScroll + itemWidth
+                scrollContainerRef.current.scrollTo({
+                  left: newScroll,
+                  behavior: 'smooth'
+                })
+              }
+            }}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-neutral-800/80 hover:bg-neutral-700/80 text-white p-2 rounded-full transition-colors md:hidden"
+            aria-label="Next project"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          {/* Fade Masks - Hidden on mobile */}
+          <div className="hidden md:block absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="hidden md:block absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-neutral-950 via-neutral-950/80 to-transparent z-10 pointer-events-none"></div>
           
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex space-x-8 md:space-x-16 py-8 px-4 md:px-8 overflow-x-auto scrollbar-hide cursor-grab select-none"
+            className="flex space-x-8 md:space-x-16 py-8 px-4 md:px-8 overflow-x-auto scrollbar-hide cursor-grab select-none md:overflow-x-auto snap-x snap-mandatory"
             style={{ 
               userSelect: 'none',
               scrollBehavior: 'auto',
@@ -290,7 +330,7 @@ export default function ScrollingGallery() {
             onTouchEnd={handleTouchEnd}
           >
             {duplicatedItems.map((item, index) => (
-              <div key={index} className="flex-shrink-0">
+              <div key={index} className="flex-shrink-0 snap-center snap-always">
                 <div 
                   className={`${item.rotation} transition-transform hover:scale-105 w-80 h-60 md:w-[560px] md:h-[400px]`}
                 >
@@ -343,7 +383,7 @@ export default function ScrollingGallery() {
           aria-labelledby="modal-title"
           aria-describedby="modal-description"
         >
-          <div className="relative bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+          <div className="relative bg-white rounded-2xl max-w-6xl w-full h-[90vh] overflow-hidden flex flex-col">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
@@ -362,15 +402,15 @@ export default function ScrollingGallery() {
             </div>
             
             {/* Modal Content */}
-            <div className="p-6">
-              <div className="aspect-video w-full">
+            <div className="flex-1 p-6 flex flex-col">
+              <div className="flex-1 w-full">
                 <iframe
                   style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
                   width="100%"
                   height="100%"
                   src={selectedItem.iframeUrl}
                   allowFullScreen
-                  className="rounded-lg"
+                  className="rounded-lg w-full h-full"
                   title={`${selectedItem.title} prototype`}
                   loading="lazy"
                 />
