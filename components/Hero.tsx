@@ -75,9 +75,24 @@ export default function Hero({ gradientClass }: HeroProps) {
 
       {/* Call to Action Buttons */}
       <div className="flex items-center justify-center space-x-8 mb-8">
-        <button className="px-8 py-4 bg-white text-neutral-950 font-medium rounded-2xl hover:bg-neutral-100 transition-colors min-h-[48px] min-w-[140px]">
+        <a 
+          href="#projects" 
+          className="px-8 py-4 bg-white text-neutral-950 font-medium rounded-2xl hover:bg-neutral-100 transition-colors min-h-[48px] min-w-[140px] inline-flex items-center justify-center"
+          onClick={(e) => {
+            e.preventDefault()
+            const element = document.getElementById('projects')
+            if (element) {
+              const elementPosition = element.offsetTop
+              const offsetPosition = elementPosition - 100
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              })
+            }
+          }}
+        >
           View My Work
-        </button>
+        </a>
         <div className="flex items-center space-x-5">
           <div className="relative">
             {/* Second ring effect - positioned directly on the red dot */}
