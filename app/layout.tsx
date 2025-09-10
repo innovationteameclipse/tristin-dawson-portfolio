@@ -23,11 +23,21 @@ export const metadata: Metadata = {
     siteName: 'Tristin Dawson Portfolio',
     locale: 'en_GB',
     type: 'website',
+    images: [
+      {
+        url: 'https://tristindawson.xyz/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tristin Dawson - Digital Designer Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Tristin Dawson - Digital Designer Portfolio',
     description: 'Self-taught Digital Designer specialising in Website Design, UI/UX, and Brand Identity.',
+    images: ['https://tristindawson.xyz/images/og-image.png'],
+    creator: '@triiistiiin',
   },
   robots: {
     index: true,
