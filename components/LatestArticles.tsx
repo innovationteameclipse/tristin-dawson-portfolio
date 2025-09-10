@@ -25,17 +25,17 @@ export default function LatestArticles() {
   return (
     <section className="mb-16">
       <div className="mb-8">
-        <h2 className="text-4xl font-bold mb-2">Latest Thoughts</h2>
-        <p className="text-light-gray">Some of my recent professional insights</p>
+        <h2 className="text-4xl font-bold mb-2 text-white">Latest Thoughts</h2>
+        <p className="text-neutral-300">Some of my recent professional insights</p>
       </div>
       
       <div className="space-y-8">
         {articles.map((article, index) => (
-          <article key={index} className="border-b border-border-gray pb-6 last:border-b-0">
-            <div className="text-sm text-light-gray mb-2">{article.date}</div>
-            <h3 className="text-xl font-semibold mb-3">{article.title}</h3>
-            <p className="text-light-gray mb-4 leading-relaxed">{article.description}</p>
-            <a href={article.link} className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+          <article key={index} className="border-b border-neutral-600 pb-6 last:border-b-0">
+            <div className="text-sm text-neutral-400 mb-2">{article.date}</div>
+            <h3 className="text-xl font-semibold mb-3 text-white">{article.title}</h3>
+            <p className="text-neutral-300 mb-4 leading-relaxed">{article.description}</p>
+            <a href={article.link} className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
               Read More →
             </a>
           </article>

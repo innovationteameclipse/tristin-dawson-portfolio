@@ -10,42 +10,42 @@ export default function ScrollingGallery() {
 
   const galleryItems = [
     {
-      title: "Manufacturing Company",
+      title: "PG Bison",
       image: "/images/pg_bison.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/OdUyTugin1jQ0eKUNJ3qw5/PG-Bison-Website?node-id=409-1026&scaling=scale-down-width&content-scaling=fixed&page-id=409%3A138&embed-host=share"
     },
     {
-      title: "Fintech Company",
+      title: "Korridor",
       image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Sound & Lighting Events",
+      title: "Son Sound",
       image: "/images/son-sound.webp",
       category: "Brand Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },
     {
-      title: "Marketing Agency",
+      title: "Starbright",
       image: "/images/starbright.webp",
       category: "Brand Design",
       rotation: "-rotate-1",
       iframeUrl: "https://embed.figma.com/proto/3zur14ZBad4GiP3YCL4tZu/Collateral?node-id=5204-25310&scaling=scale-down-width&content-scaling=fixed&page-id=5204%3A25307&embed-host=share"
     },
     {
-      title: "Cybersecurity Company",
+      title: "Restack",
       image: "/images/restack.webp",
       category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/J6j1TaA5cytonFvmgYxWOL/Restack?node-id=710-292&scaling=scale-down-width&content-scaling=fixed&page-id=709%3A291&starting-point-node-id=710%3A292&embed-host=share"
     },
     {
-      title: "Legal Practice",
+      title: "IPP Attorneys",
       image: "/images/ipp.webp",
       category: "Website Design",
       rotation: "-rotate-1",
@@ -98,7 +98,7 @@ export default function ScrollingGallery() {
 
   return (
     <section id="projects" className="mb-16">
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-2 text-white">Recent Projects</h2>
           <p className="text-xl text-neutral-300">A showcase of my latest design work</p>
@@ -108,7 +108,7 @@ export default function ScrollingGallery() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
+            className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
             aria-label="Previous project"
             style={{ width: '48px', height: '48px' }}
           >
@@ -118,7 +118,7 @@ export default function ScrollingGallery() {
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
+            className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white rounded-full transition-all duration-300 pointer-events-auto touch-manipulation flex items-center justify-center shadow-xl"
             aria-label="Next project"
             style={{ width: '48px', height: '48px' }}
           >
@@ -139,11 +139,11 @@ export default function ScrollingGallery() {
                       : 'opacity-0 z-0 pointer-events-none'
                   }`}
                 >
-                  {/* <button 
+                  <button 
                     className="relative group cursor-pointer block w-full h-full"
                     onClick={() => openModal(item)}
                     aria-label={`View ${item.title} project prototype`}
-                  > */}
+                  >
                     <div className="relative group block w-full h-full">
                     <Image
                       src={item.image}
@@ -157,14 +157,14 @@ export default function ScrollingGallery() {
                       <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex flex-col items-center justify-center text-white p-4">
                         <h4 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-center">{item.title}</h4>
                         <p className="text-sm md:text-lg text-neutral-300 mb-3 md:mb-4 text-center">{item.category}</p>
-                        {/* {item.iframeUrl && (
+                        {item.iframeUrl && (
                           <div className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg text-sm md:text-base">
                             View Prototype
                           </div>
-                        )} */}
+                        )}
                       </div>
                     </div>
-                  {/* </button> */}
+                  </button>
                 </div>
               ))}
               </div>
@@ -172,8 +172,8 @@ export default function ScrollingGallery() {
         </div>
       </div>
 
-      {/* Modal - Commented out */}
-      {/* {isModalOpen && selectedItem && (
+      {/* Modal */}
+      {isModalOpen && selectedItem && (
         <div 
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
           role="dialog"
@@ -214,7 +214,7 @@ export default function ScrollingGallery() {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </section>
   )
 }
