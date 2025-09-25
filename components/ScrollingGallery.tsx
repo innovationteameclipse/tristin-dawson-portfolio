@@ -21,12 +21,12 @@ export default function ScrollingGallery() {
       image: "/images/korridor.webp",
       category: "Website Design",
       rotation: "-rotate-1",
-      iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+      iframeUrl: "https://embed.figma.com/proto/WHHuh6Yx3o8bvpXeqnUK1k/Korridor-Home-Page-Concept?node-id=6-25&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A25&embed-host=share"
     },
     {
       title: "Son Sound",
       image: "/images/son-sound.webp",
-      category: "Brand Design",
+      category: "Website Design",
       rotation: "rotate-1",
       iframeUrl: "https://embed.figma.com/proto/qyH3PPJJErFZ8avnv20ZzA/Son-Sound-Concept?node-id=1-2&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&embed-host=share"
     },

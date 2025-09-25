@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://tristindawson.xyz/images/og-image.png',
+        url: 'https://tristindawson.xyz/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Tristin Dawson - Digital Designer Portfolio',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tristin Dawson - Digital Designer Portfolio',
     description: 'Self-taught Digital Designer specialising in Website Design, UI/UX, and Brand Identity.',
-    images: ['https://tristindawson.xyz/images/og-image.png'],
+    images: ['https://tristindawson.xyz/images/og-image.webp'],
     creator: '@triiistiiin',
   },
   robots: {
@@ -56,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" href="/pen-tool.png" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://vercel.com" />
