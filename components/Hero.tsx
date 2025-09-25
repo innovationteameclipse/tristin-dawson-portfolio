@@ -76,31 +76,19 @@ export default function Hero({ gradientClass }: HeroProps) {
       {/* Call to Action Buttons */}
       <div className="flex items-center justify-center space-x-8 mb-8">
         <a 
-          href="#projects" 
+          href="/Tristin Dawson CV (Small).pdf" target="_blank" rel="noopener noreferrer"
           className="px-8 py-4 bg-white text-neutral-950 font-medium rounded-2xl hover:bg-neutral-100 transition-colors min-h-[48px] min-w-[140px] inline-flex items-center justify-center"
-          onClick={(e) => {
-            e.preventDefault()
-            const element = document.getElementById('projects')
-            if (element) {
-              const elementPosition = element.offsetTop
-              const offsetPosition = elementPosition - 100
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-              })
-            }
-          }}
         >
-          View My Work
+          Download my CV
         </a>
         <div className="flex items-center space-x-5">
           <div className="relative">
             {/* Second ring effect - positioned directly on the red dot */}
-            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-red-500 rounded-full animate-ping opacity-75"></div>
+            <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-green-500 rounded-full animate-ping opacity-75"></div>
             {/* Original red dot */}
-            <div className="w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
+            <div className="w-3 h-3 bg-green-500 rounded-full shadow-lg"></div>
           </div>
-          <span className="text-red-500 text-sm font-medium">Not Open To New Opportunities</span>
+          <span className="text-green-500 text-sm font-medium">Open to New Opportunities</span>
         </div>
       </div>
 
